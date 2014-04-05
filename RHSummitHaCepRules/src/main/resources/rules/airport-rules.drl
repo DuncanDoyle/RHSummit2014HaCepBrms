@@ -1,0 +1,50 @@
+package org.jboss.ddoyle.rhsummit2014.bags;
+
+import org.jboss.ddoyle.rhsummit2014.hacepbrms.model.BagScannedEvent;
+import org.jboss.ddoyle.rhsummit2014.hacepbrms.model.Location;
+
+global org.slf4j.Logger LOGGER;
+
+declare BagScannedEvent
+    @role( event )
+    @timestamp( eventTimestamp.getTime() )
+    @expires( 2d )
+end
+
+
+rule "Baggage lost at sorting"
+when
+    $b1:BagScannedEvent( location == Location.CHECK_IN )
+    not BagScannedEvent( bagTag == $b1.bagTag, location == Location.SORTING, this after[0s,10m] $b1 )
+then
+	System.out.println("Baggage lost at sorting");
+end
+
+
+/*
+rule "Baggage lost at staging"
+when
+    $b1 : BagScannedEvent( location == Location.SORTING )
+    not BagScannedEvent( bagTag == $b1.bagTag, location == Location.STAGING, this after[0s,10m] $b1 )
+then
+end
+
+
+rule "Baggage lost at loading"
+when
+    $b1 : BagScannedEvent( location == Location.STAGING )
+    not BagScannedEvent( bagTag == $b1.bagTag, location == Location.LOADING, this after[0s,10m] $b1 )
+then
+end
+
+
+
+
+rule "We will proceed to offload your baggage"
+
+when
+
+then
+
+end
+*/

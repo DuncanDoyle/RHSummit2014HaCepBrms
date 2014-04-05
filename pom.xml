@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jboss.ddoyle.rhsummit2014.hacepbrms</groupId>
+	<artifactId>RHSummitHaCepRoot</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>RHSummitHaCepModel</module>
+		<!-- <module>RHSummitHaCepCommands</module> -->
+		<module>RHSummitHaCepRules</module>
+		<!-- <module>RHSummitHaCepApp</module> -->
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Project dependencies. -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>RHSummitHaCepModel</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- <dependency> <groupId>${project.groupId}</groupId> <artifactId>RHSummitHaCepCommands</artifactId> <version>${project.version}</version> 
+				</dependency> -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>RHSummitHaCepRules</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- KIE and Drools dependencies. -->
+			<dependency>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-api</artifactId>
+				<version>6.0.2-redhat-2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-core</artifactId>
+				<version>6.0.2-redhat-2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-compiler</artifactId>
+				<version>6.0.2-redhat-2</version>
+			</dependency>
+			<!-- Third party library dependencies. -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+			<!-- Test dependencies. -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

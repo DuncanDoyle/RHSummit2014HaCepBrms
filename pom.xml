@@ -7,12 +7,21 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>RHSummitHaCepModel</module>
-		<!-- <module>RHSummitHaCepCommands</module> -->
+		<module>RHSummitHaCepCommands</module>
 		<module>RHSummitHaCepRules</module>
 		<!-- <module>RHSummitHaCepApp</module> -->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
+			<!-- JBoss EAP 6.2 BOM -->
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-web-6.0</artifactId>
+				<version>3.0.2.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<!-- Project dependencies. -->
 			<dependency>
 				<groupId>${project.groupId}</groupId>

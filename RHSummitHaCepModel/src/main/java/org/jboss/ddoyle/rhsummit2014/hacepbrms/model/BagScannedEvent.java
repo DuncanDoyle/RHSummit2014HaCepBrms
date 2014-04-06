@@ -1,14 +1,22 @@
 package org.jboss.ddoyle.rhsummit2014.hacepbrms.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Event fired when a bag is scanned.
  * 
  * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
  */
-public class BagScannedEvent {
+public class BagScannedEvent extends AbstractFact implements Event {
 
+	/**
+	 * SerialVersionUID. 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	
+	
 	private final BagTag bagTag;
 	
 	private final Location location;
@@ -20,6 +28,7 @@ public class BagScannedEvent {
 	}
 	
 	public BagScannedEvent(BagTag bagTag, Location location, Date eventTimestamp) {
+		super(UUID.randomUUID().toString());
 		this.bagTag = bagTag;
 		this.location = location;
 		this.eventTimestamp = eventTimestamp;

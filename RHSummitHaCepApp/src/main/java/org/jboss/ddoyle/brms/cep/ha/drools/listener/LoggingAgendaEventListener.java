@@ -15,6 +15,10 @@ import org.kie.api.event.rule.RuleFlowGroupDeactivatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
+ */
 public class LoggingAgendaEventListener implements AgendaEventListener {
 
 	private Logger LOGGER = LoggerFactory.getLogger(LoggingAgendaEventListener.class);

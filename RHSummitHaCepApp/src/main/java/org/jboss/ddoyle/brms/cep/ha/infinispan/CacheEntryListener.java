@@ -10,6 +10,10 @@ import org.infinispan.notifications.cachelistener.event.CacheEntryRemovedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
+ */
 @Listener
 public class CacheEntryListener {
 

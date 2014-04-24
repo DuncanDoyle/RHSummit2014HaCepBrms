@@ -14,6 +14,10 @@ import org.kie.api.marshalling.ObjectMarshallingStrategyAcceptor;
 import org.kie.api.runtime.KieSession;
 import org.kie.internal.marshalling.MarshallerFactory;
 
+/**
+ * 
+ * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
+ */
 public class KieSessionWrapper implements Serializable {
 
 	/**

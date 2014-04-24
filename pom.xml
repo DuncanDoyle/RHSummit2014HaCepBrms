@@ -9,7 +9,7 @@
 		<module>RHSummitHaCepModel</module>
 		<module>RHSummitHaCepCommands</module>
 		<module>RHSummitHaCepRules</module>
-		<!-- <module>RHSummitHaCepApp</module> -->
+		<module>RHSummitHaCepApp</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
@@ -28,8 +28,11 @@
 				<artifactId>RHSummitHaCepModel</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<!-- <dependency> <groupId>${project.groupId}</groupId> <artifactId>RHSummitHaCepCommands</artifactId> <version>${project.version}</version> 
-				</dependency> -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>RHSummitHaCepCommands</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>RHSummitHaCepRules</artifactId>
@@ -54,9 +57,59 @@
 			</dependency>
 			<!-- Third party library dependencies. -->
 			<dependency>
+				<groupId>org.jboss.weld.se</groupId>
+				<artifactId>weld-se-core</artifactId>
+				<version>1.1.13.Final</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hornetq</groupId>
+				<artifactId>hornetq-jms-client</artifactId>
+				<version>2.3.5.Final-redhat-2</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-core</artifactId>
+				<!-- TODO: Replace with community version. -->
+				<version>6.0.1.Final-redhat-2</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-core</artifactId>
+				<!-- TODO: Replace with community version. -->
+				<version>6.0.2.Final</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-client-hotrod</artifactId>
+				<version>6.0.2.Final</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>1.7.5</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>1.0.13</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.0.13</version>
+				<scope>compile</scope>
 			</dependency>
 			<!-- Test dependencies. -->
 			<dependency>

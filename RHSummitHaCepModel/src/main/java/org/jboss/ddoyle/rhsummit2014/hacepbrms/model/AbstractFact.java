@@ -1,5 +1,9 @@
 package org.jboss.ddoyle.rhsummit2014.hacepbrms.model;
 
+/**
+ * 
+ * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
+ */
 public class AbstractFact implements Fact {
 
 	/**

@@ -76,9 +76,9 @@ public class CommandIdBuilder {
 				// TODO: Don't we have a problem when the object is not one of our facts? The hash of these objects might be different
 				// across JVMs
 
-				LOGGER.warn("BRMS Rule Match triggered by a fact which is not an ERDF Fact object.: '"
+				LOGGER.warn("BRMS Rule Match triggered by a fact which is not one of our Fact object.: '"
 						+ nextObject.getClass().getCanonicalName()
-						+ "'. This fact will be ignored in this ID generation. This situation should not happen in the ERDF Linky BRMS CEP HA system and indicates an incorrectly defined rule or Fact object.");
+						+ "'. This fact will be ignored in this ID generation. This situation should not happen in the RH Summit 2015 BRMS CEP HA system and indicates an incorrectly defined rule or Fact object.");
 			}
 
 			// Not sure whether the facts list can contain the same fact twice. If that's the case, we might need to use a 'Sorted Bag'

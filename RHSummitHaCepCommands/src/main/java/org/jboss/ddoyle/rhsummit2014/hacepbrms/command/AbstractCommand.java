@@ -25,6 +25,5 @@ public abstract class AbstractCommand implements Command {
 		return id;
 	}
 	
-	
 
 }

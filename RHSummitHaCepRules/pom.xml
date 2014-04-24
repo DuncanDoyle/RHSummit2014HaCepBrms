@@ -9,10 +9,16 @@
 	<artifactId>RHSummitHaCepRules</artifactId>
 	<description>RH Summit HA CEP Rules</description>
 	<dependencies>
+		<!-- Project dependencies. -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>RHSummitHaCepModel</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>RHSummitHaCepCommands</artifactId>
+		</dependency>
+		<!-- Third party lib dependencies. -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

@@ -11,13 +11,17 @@
 		<module>RHSummitHaCepRules</module>
 		<module>RHSummitHaCepApp</module>
 	</modules>
+	<properties>
+		<version.org.kie>6.0.3-redhat-6</version.org.kie>
+		<version.org.infinispan>6.2.0.Final-redhat-4</version.org.infinispan>
+	</properties>
 	<dependencyManagement>
 		<dependencies>
-			<!-- JBoss EAP 6.2 BOM -->
+			<!-- JBoss EAP 6.3 BOM -->
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
 				<artifactId>jboss-javaee-web-6.0</artifactId>
-				<version>3.0.2.Final</version>
+				<version>3.0.2.Final-redhat-13</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -43,49 +47,42 @@
 			<dependency>
 				<groupId>org.kie</groupId>
 				<artifactId>kie-api</artifactId>
-				<version>6.0.2-redhat-2</version>
+				<version>${version.org.kie}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.drools</groupId>
 				<artifactId>drools-core</artifactId>
-				<version>6.0.2-redhat-2</version>
+				<version>${version.org.kie}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.drools</groupId>
 				<artifactId>drools-compiler</artifactId>
-				<version>6.0.2-redhat-2</version>
+				<version>${version.org.kie}</version>
 			</dependency>
 			<!-- Third party library dependencies. -->
 			<dependency>
 				<groupId>org.jboss.weld.se</groupId>
 				<artifactId>weld-se-core</artifactId>
-				<version>1.1.13.Final</version>
+				<version>1.1.23.Final</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.hornetq</groupId>
 				<artifactId>hornetq-jms-client</artifactId>
-				<version>2.3.5.Final-redhat-2</version>
+				<version>2.3.20.Final-redhat-1</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.infinispan</groupId>
 				<artifactId>infinispan-core</artifactId>
 				<!-- TODO: Replace with community version. -->
-				<version>6.0.1.Final-redhat-2</version>
-				<scope>compile</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-core</artifactId>
-				<!-- TODO: Replace with community version. -->
-				<version>6.0.2.Final</version>
+				<version>${version.org.infinispan}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.infinispan</groupId>
 				<artifactId>infinispan-client-hotrod</artifactId>
-				<version>6.0.2.Final</version>
+				<version>${version.org.infinispan}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>

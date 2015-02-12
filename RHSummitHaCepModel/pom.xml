@@ -3,7 +3,7 @@
   <parent>
   	<groupId>org.jboss.ddoyle.rhsummit2014.hacepbrms</groupId>
   	<artifactId>RHSummitHaCepRoot</artifactId>
-  	<version>1.0.0</version>
+  	<version>1.0.1</version>
   </parent>
   <artifactId>RHSummitHaCepModel</artifactId>
   <description>RH Summit HA CEP Model</description>

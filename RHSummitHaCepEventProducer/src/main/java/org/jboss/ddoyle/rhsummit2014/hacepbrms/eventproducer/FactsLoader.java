@@ -2,8 +2,11 @@ package org.jboss.ddoyle.rhsummit2014.hacepbrms.eventproducer;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,11 +35,29 @@ public class FactsLoader {
 	public static List<Event> loadEvents(File eventsFile) {
 
 		List<Event> eventList = new ArrayList<Event>();
-		BufferedReader br = null;
+		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader(eventsFile));
+		} catch (FileNotFoundException fnfe) {
+			String message = "File not found.";
+			LOGGER.error(message, fnfe);
+			throw new IllegalArgumentException(message, fnfe);
+		}
+		return loadEvents(br);
+		
+	}
+	
+	public static List<Event> loadEvents(InputStream eventsInputStream) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(eventsInputStream));
+		return loadEvents(br);
+		
+	}
+	
+	private static List<Event> loadEvents(BufferedReader reader) {
+		List<Event> eventList = new ArrayList<Event>();
+		try {
 			String nextLine;
-			while ((nextLine = br.readLine()) != null) {
+			while ((nextLine = reader.readLine()) != null) {
 				if (!nextLine.startsWith("#")) {
 					Event bagScanEvent = readEvent(nextLine);
 					if (bagScanEvent != null) {
@@ -47,9 +68,9 @@ public class FactsLoader {
 		} catch (IOException ioe) {
 			throw new RuntimeException("Got an IO exception while reading events.", ioe);
 		} finally {
-			if (br != null) {
+			if (reader != null) {
 				try {
-					br.close();
+					reader.close();
 				} catch (IOException ioe) {
 					// Swallowing exception, not much we can do here.
 					LOGGER.error("Unable to close reader.", ioe);

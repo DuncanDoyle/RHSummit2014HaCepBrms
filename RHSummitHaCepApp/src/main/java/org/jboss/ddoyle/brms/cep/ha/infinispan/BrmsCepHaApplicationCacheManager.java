@@ -6,12 +6,15 @@ import javax.enterprise.context.ApplicationScoped;
 
 import org.infinispan.Cache;
 import org.infinispan.manager.CacheContainer;
+import org.jboss.ddoyle.brms.cep.ha.cdi.Eager;
 
 /**
  * {@link Cache} manager for ISPN caches.
  * 
  * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
  */
+
+@Eager
 @ApplicationScoped
 public class BrmsCepHaApplicationCacheManager implements ApplicationCacheManager {
 	

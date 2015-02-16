@@ -36,7 +36,6 @@ public class InfinispanIdempotantCommandDispatcher implements CommandDispatcher 
 	private static final TimeUnit COMMAND_TTL_TIMEUNIT = TimeUnit.HOURS;
 
 	@Inject
-	@HotRod
 	private ApplicationCacheManager cacheManager;
 
 	private BasicCache<String, Command> commandsCache;
@@ -51,7 +50,7 @@ public class InfinispanIdempotantCommandDispatcher implements CommandDispatcher 
 
 	@Override
 	public void dispatch(Command command) {
-		LOGGER.debug("Dispatching Command to CommandExecutionService.");
+		LOGGER.trace("Dispatching Command to CommandExecutionService.");
 		if (command instanceof IdempotentCommand) {
 			commandExecutionService.execute(command);
 		} else {

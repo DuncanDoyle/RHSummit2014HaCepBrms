@@ -1,6 +1,7 @@
 package org.jboss.ddoyle.rhsummit2014.hacepbrms.eventproducer;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 import org.jboss.ddoyle.rhsummit2014.hacepbrms.model.Event;
@@ -29,12 +30,14 @@ public class Main {
 		LOGGER.info("Initializing Router.");
 		eventRouter = new JmsRouter();
 		
-		String eventsFileUrl = Main.class.getClassLoader().getResource("events.csv").getFile();
-		File eventsFile = new File(eventsFileUrl);
+		//String eventsFileUrl = Main.class.getClassLoader().getResource("events.csv").getFile();
+		//File eventsFile = new File(eventsFileUrl);
+		InputStream eventsFileStream = Main.class.getClassLoader().getResourceAsStream("events.csv");
 		
 		LOGGER.info("Loading events from file.");
 		
-		List<Event> events = FactsLoader.loadEvents(eventsFile);
+		List<Event> events = FactsLoader.loadEvents(eventsFileStream);
+		
 		
 		for (Event nextEvent: events) {
 			LOGGER.info("Routing event to CEP system.");

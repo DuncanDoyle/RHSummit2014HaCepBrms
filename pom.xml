@@ -10,6 +10,7 @@
 		<module>RHSummitHaCepCommands</module>
 		<module>RHSummitHaCepRules</module>
 		<module>RHSummitHaCepApp</module>
+		<module>RHSummitHaCepEventProducer</module>
 	</modules>
 	<properties>
 		<version.org.kie>6.0.3-redhat-6</version.org.kie>

@@ -9,27 +9,21 @@
         </encoder>
     </appender>
     
+    <!-- 
     <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
         <file>${user.home}/ha-cep-brms/log/ha-cep-brms-${rhsummit2014.hornetq.client.id}.log</file>
         <append>true</append>
         <encoder>
+    -->
         <!--
             <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
         -->
+        
+    <!-- 
             <pattern>%d [%p] [%t] [%C] %-5p %m%n</pattern>
         </encoder>
     </appender>
-    
-    <appender name="commandsFileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>${user.home}/ha-cep-brms/log/ha-cep-brms-commands-${rhsummit2014.hornetq.client.id}.log</file>
-        <append>false</append>
-        <encoder>
-        <!--
-            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
-        -->
-            <pattern>%d [%p] [%t] [%C] %-5p %m%n</pattern>
-        </encoder>
-    </appender>
+     -->
     
     <logger name="org.kie" level="info"/>
     
@@ -39,13 +33,17 @@
     
     <logger name="org.jgroups" level="info" />
     
-    <logger name ="org.jboss.ddoyle.brms.cep.ha.command" level="debug" additivity="false">
-    	<appender-ref ref="commandsFileAppender"/>
-    </logger>
+    <logger name="org.jboss.naming.remote.protocol.v1" level="off" />
     
-    <root level="debug"><!-- TODO We probably want to set default level to warn instead -->
+    <logger name="org.jboss.ddoyle.brms.cep.ha.Main" level="info" />  
+        
+    <logger name ="org.jboss.ddoyle.brms.cep.ha.command" level="debug" />
+    
+    <root level="warn"><!-- TODO We probably want to set default level to warn instead -->
         <appender-ref ref="consoleAppender"/>
+        <!-- 
         <appender-ref ref="fileAppender" />
+         -->
     </root>
 
 </configuration>

@@ -56,10 +56,10 @@ public class InfinispanIdempotantCommandDispatcher implements CommandDispatcher 
 		} else {
 			Command oldCommand = commandsCache.putIfAbsent(command.getId(), command, COMMAND_TTL, COMMAND_TTL_TIMEUNIT);
 			if (oldCommand == null) {
-				LOGGER.debug("Inserted Command with ID: '" + command.getId() + "' into cache.");
+				LOGGER.debug("INSERTED COMMAND with ID: '" + command.getId() + "' into cache.\n");
 				commandExecutionService.execute(command);
 			} else {
-				LOGGER.debug("Discarding Command with ID: '" + command.getId() + "' as it has already been executed earlier.");
+				LOGGER.debug("DISCARDING COMMAND with ID: '" + command.getId() + "' as it has already been executed earlier.\n");
 			}
 
 		}

@@ -26,7 +26,7 @@ public class SystemOutCommand extends AbstractCommand {
 	 */
 	@Override
 	public Object execute() {
-		System.out.println("Command-ID: " + getId() + "\nMessage: " + message);
+		System.out.println("Command-ID: " + getId() + "\nMessage: " + message + "\n");
 		return null;
 	}
 	

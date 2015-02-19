@@ -23,7 +23,7 @@ public class SimpleCommandExecutionService implements CommandExecutionService {
 
 	@Override
 	public Object execute(Command command) {
-		LOGGER.debug("Executing command: " + command.getId());
+		LOGGER.debug("EXECUTING COMMAND: " + command.getId() + "\n");
 		return command.execute();
 	}
 

@@ -23,7 +23,7 @@ engine has already executed this Command and the Command gets discarded by the e
 
 A presentation that explains these concepts can be found [here](https://access.redhat.com/videos/875833)
 
-## The demo.
+## The Demo
 ### Prerequisit
 In order to able to run the demo, your system needs to be multi-homed. The provided startup scripts bind JBoss EAP to address 127.0.0.1, the CEP node 1 to 127.0.0.3 and the CEP node 2 to 127.0.0.4.
 

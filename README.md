@@ -44,12 +44,12 @@ be picked up by the CEP engines.
 Notice that the 2 CEP engines are running in parallel. For each rule fired, the output (in this case the SystemOutCommand) will only be processed by one engine. This can be either one of the engines, whichever one
 is first. In the engine that executes the command, you will see a log-line similar like this:
 
-*2015-02-19 17:28:50,027 [DEBUG] [pool-5-thread-1] [org.jboss.ddoyle.brms.cep.ha.command.dispatch.InfinispanIdempotantCommandDispatcher] DEBUG INSERTED COMMAND with ID: 'org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]' into cache.
+*2015-02-19 17:28:50,027 [DEBUG] [pool-5-thread-1] [org.jboss.ddoyle.brms.cep.ha.command.dispatch.InfinispanIdempotantCommandDispatcher] DEBUG INSERTED COMMAND with ID: 'org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]' into cache.*
 
-2015-02-19 17:28:50,027 [DEBUG] [pool-5-thread-1] [org.jboss.ddoyle.brms.cep.ha.command.executor.SimpleCommandExecutionService] DEBUG EXECUTING COMMAND: org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]
+*2015-02-19 17:28:50,027 [DEBUG] [pool-5-thread-1] [org.jboss.ddoyle.brms.cep.ha.command.executor.SimpleCommandExecutionService] DEBUG EXECUTING COMMAND: org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]*
 
-Command-ID: org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]
-Message: Baggage lost at sorting. BagTag ID: 3*
+*Command-ID: org.jboss.ddoyle.rhsummit2014.bags:BaggageLostAtSorting:BaggageLostAtSorting-[3]*
+*Message: Baggage lost at sorting. BagTag ID: 3*
 
 In the engine that discards the same command, you will see something like this:
 
